@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-App_Data",
+      "appliesTo": "DemonCRUD/App_Data/",
+      "type": "launch"
+    }
+  ]
+}

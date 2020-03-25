@@ -1,0 +1,39 @@
+﻿@model LivrariaCactus_Balao.Models.Livro
+@{
+    ViewBag.Title = "Devolver Livro";
+}
+
+<h2>Devolver Livro</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Livro</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Titulo)
+    @Html.HiddenFor(model => model.Autor)
+    @Html.HiddenFor(model => model.AnoEdicao)
+    @Html.HiddenFor(model => model.Valor)
+    @Html.HiddenFor(model => model.GeneroId)
+    @Html.HiddenFor(model => model.Alugado)
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <span>Deseja devolver este livro?</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Sim" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
